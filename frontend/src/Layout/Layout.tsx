@@ -20,6 +20,11 @@ const Layout: React.FC = () => {
     getNotes(new Date());
   }, []);
 
+  const onDateChangeHandler = (date: Date) => {
+    getNotes(date);
+    setActiveNoteParams({ ...activeNoteParams, date: date })
+  };
+
   const onCreateButtonCLickHandler = () => {
     setActiveNoteParams({...activeNoteParams, type: 'create'});
     setIsPopupShow(true);
@@ -36,7 +41,7 @@ const Layout: React.FC = () => {
           <CreateIcon />
           Создать
         </div>
-        <DatePicker onChange={getNotes}/>
+        <DatePicker onChange={onDateChangeHandler}/>
       </div>
       <Content setActiveNoteParams={setActiveNoteParams} setIsPopupShow={setIsPopupShow}/>
     </div>

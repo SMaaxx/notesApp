@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-var corsOptions = {
+const corsOptions = {
   origin: true
 };
 

@@ -8,6 +8,8 @@ services:
     depends_on:
       - database
     image: node:18
+    env_file:
+      - backend/.env
     volumes:
       - ./:/app
 

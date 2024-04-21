@@ -72,7 +72,6 @@ const getData = (notes, week) => {
   };
 
   notes.forEach((item) => {
-    console.log('item -> ', [item.dataValues.date.toLocaleDateString('en-US', { weekday: 'long' })]);
     editedData?.[item.dataValues.date.toLocaleDateString('en-US', { weekday: 'long' })].notes.push(item);
   });
 

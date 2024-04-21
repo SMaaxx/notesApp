@@ -1,11 +1,11 @@
 import axios from 'axios';
 import store from '../Store/Store';
 import { Data, Note } from '../types';
-import { replaceNote, deleteFromData } from '../common/utils/utils';
+import { replaceNote, deleteFromData, getDateUTC } from '../common/utils/utils';
 
 export const getNotes = async (date: Date): Promise<void> => {
   try {
-    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/getNotes`, { date: date });
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/getNotes`, { date: getDateUTC(date) });
 
     store.dispatch({
       type: 'changeAll',
@@ -20,7 +20,7 @@ export const createNote = async (data: Data, note: Note, date: Date ): Promise<v
   try {
     const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/createNote`, {
       note: note,
-      date: date
+      date: getDateUTC(date)
     });
 
     store.dispatch({
