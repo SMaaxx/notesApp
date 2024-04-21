@@ -31,6 +31,9 @@ services:
 
   database:
     image: "postgres"
+    environment:
+      POSTGRES_PORT: 5432
+      POSTGRES_PASSWORD: superuserpassword
     env_file:
       - backend/.env
     volumes:

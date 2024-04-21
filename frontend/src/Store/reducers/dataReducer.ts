@@ -1,4 +1,4 @@
-import { Data, DataState, Note } from '../../types';
+import { Data, DataState } from '../../types';
 
 interface Action {
   type: string,
