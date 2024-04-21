@@ -1,0 +1,39 @@
+version: '3'
+
+volumes:
+  database-data:
+
+services:
+  backend:
+    depends_on:
+      - database
+    image: node:18
+    volumes:
+      - ./:/app
+
+      - /app/node_modules
+    ports:
+      - 3001:3001
+
+    working_dir: /app/backend
+    entrypoint: npm run backend-start
+
+  frontend:
+    image: node:18
+    volumes:
+      - ./:/app
+
+    ports:
+      - 3000:3000
+
+    working_dir: /app/frontend
+    entrypoint: npm run frontend-start
+
+  database:
+    image: "postgres"
+    env_file:
+      - backend/.env
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432

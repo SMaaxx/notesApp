@@ -1,0 +1,119 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+    background-color: #191a1a;
+    border-radius: 7px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    width: 200px;
+    height: 100%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+
+    background-color: #202222;
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 5px;
+
+    text-align: center;
+    font-size: 24px;
+}
+
+.note {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    height: 20%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #191a1a;
+}
+
+.notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+
+    height: 50%;
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #202222;
+    background-color: #202222;
+    padding: 5px;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.holiday {
+    background-color: #191a1a;
+    color: #FFFFFF;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.date {
+    color: #8D9191FF;
+}
+
+.holiday {
+    background-color: brown;
+}
+
+.day {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.month {
+    color: #8D9191FF;
+    font-size: 14px;
+}
+
+.dots {
+    position: absolute;
+    top: 10%;
+    left: 85%;
+}
+
+.label:hover {
+    color: #8D9191FF;
+}
+
+::-webkit-scrollbar {
+    background-color: #202222;
+    width: 1px;
+}

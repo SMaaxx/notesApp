@@ -1,0 +1,19 @@
+.container {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    width: 100px;
+    height: 50px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background-color: #2d2d2d;
+    border-radius: 5px;
+    border: 2px #191a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
