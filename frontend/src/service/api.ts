@@ -5,7 +5,7 @@ import { replaceNote, deleteFromData } from '../common/utils/utils';
 
 export const getNotes = async (date: Date): Promise<void> => {
   try {
-    const response = await axios.post(`${process.env.BACKEND_URL}/api/getNotes`, { date: date });
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/getNotes`, { date: date });
 
     store.dispatch({
       type: 'changeAll',
@@ -18,7 +18,7 @@ export const getNotes = async (date: Date): Promise<void> => {
 
 export const createNote = async (data: Data, note: Note, date: Date ): Promise<void> => {
   try {
-    const response = await axios.post(`${process.env.BACKEND_URL}/api/createNote`, {
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/createNote`, {
       note: note,
       date: date
     });
@@ -34,7 +34,7 @@ export const createNote = async (data: Data, note: Note, date: Date ): Promise<v
 
 export const deleteNote = async (data: Data, id: string, key: string): Promise<void> => {
   try {
-    const response = await axios.post(`${process.env.BACKEND_URL}/api/deleteNote`, { id: id });
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/deleteNote`, { id: id });
 
     response.data.success && store.dispatch({
       type: 'changeAll',
@@ -47,7 +47,7 @@ export const deleteNote = async (data: Data, id: string, key: string): Promise<v
 
 export const editNote = async (data: Data, note: Note, day: string): Promise<void> => {
   try {
-    const response = await axios.post(`${process.env.BACKEND_URL}/api/changeNote`, {
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/changeNote`, {
       note: note
     });
 

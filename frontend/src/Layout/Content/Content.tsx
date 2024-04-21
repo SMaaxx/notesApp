@@ -35,7 +35,7 @@ const Content: React.FC<Props> = ({ setActiveNoteParams, setIsPopupShow }) => {
     <div className={styles.container}>
       {Object.entries(data).map(([key, item]: [string, Day]) => {
         return(
-          <div className={styles.column}>
+          <div className={styles.column} key={key}>
             <div className={styles.title}>
               <div className={item.day.holiday ? `${styles.number} ${styles.holiday}` : styles.number}>{item.day.date}</div>
               <div className={styles.day}>{item.day.name}</div>
